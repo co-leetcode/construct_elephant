@@ -3,7 +3,7 @@
 * ~~要恰饭的嘛~~
 ## members
 * Ajingbaobao
-* foollishpig
+* foollishPig
 * minwiki7456
 * wallaceplayfrog
 ## content
