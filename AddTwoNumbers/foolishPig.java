@@ -1,25 +1,25 @@
 package com.LeetCode;
 /**
- * Ê¹ÓÃÁ´±íÄæÐò´æ´¢Á½¸ö²»Í¬µÄÊý×Ö,Ò»¸ö½ÚµãÖ»ÄÜ´æ´¢Ò»¸öÊý×Ö,²¢ÇóºÍ´æ´¢
+ * ä½¿ç”¨é“¾è¡¨é€†åºå­˜å‚¨ä¸¤ä¸ªä¸åŒçš„æ•°å­—,ä¸€ä¸ªèŠ‚ç‚¹åªèƒ½å­˜å‚¨ä¸€ä¸ªæ•°å­—,å¹¶æ±‚å’Œå­˜å‚¨
  * @author Zhi
  */
 import java.util.Scanner;
 
-public class AddTwoNumbers {
+public class foolishPig {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		System.out.println("ÇëÊäÈëÊý×Ö1:");
+		System.out.println("è¯·è¾“å…¥æ•°å­—1:");
 		int x = s.nextInt();
-		System.out.println("ÇëÊäÈëÊý×Ö2");
+		System.out.println("è¯·è¾“å…¥æ•°å­—2");
 		int y = s.nextInt();
-		ListNode l1 = new ListNode(x%10);		//ÄæÐò´æ´¢µÚÒ»¸ö½ÚµãÎª¸öÎ»Êý
-		l1.next=new ListNode(x%100/10);		//µÚ¶þ¸ö½ÚµãÊ®Î»Êý
-		l1.next.next=new ListNode(x/100);		//µÚÈý¸ö½Úµã°ÙÎ»Êý
+		ListNode l1 = new ListNode(x%10);		//é€†åºå­˜å‚¨ç¬¬ä¸€ä¸ªèŠ‚ç‚¹ä¸ºä¸ªä½æ•°
+		l1.next=new ListNode(x%100/10);		//ç¬¬äºŒä¸ªèŠ‚ç‚¹åä½æ•°
+		l1.next.next=new ListNode(x/100);		//ç¬¬ä¸‰ä¸ªèŠ‚ç‚¹ç™¾ä½æ•°
 		ListNode l2 = new ListNode(y%10);
 		l2.next=new ListNode(y%100/10);
 		l2.next.next=new ListNode(y/100);
-		int a=0,b=0,c=0;		//aÎªÁ½Êý¸öÎ»Ïà¼ÓÖ®ºÍ,bÎªÊ®Î»,cÎª°ÙÎ»
+		int a=0,b=0,c=0;		//aä¸ºä¸¤æ•°ä¸ªä½ç›¸åŠ ä¹‹å’Œ,bä¸ºåä½,cä¸ºç™¾ä½
 		a = l1.val+l2.val;
 		b = l1.next.val+l2.next.val;
 		c = l1.next.next.val+l2.next.next.val;
@@ -31,7 +31,7 @@ public class AddTwoNumbers {
 			b = b-10;
 			c = c+1;
 		}
-		ListNode l3 = new ListNode(a);		//½«Ëù¼Ó½á¹û´æ´¢ÔÚÐÂÁ´±íÖÐ
+		ListNode l3 = new ListNode(a);		//å°†æ‰€åŠ ç»“æžœå­˜å‚¨åœ¨æ–°é“¾è¡¨ä¸­
 		l3.next = new ListNode(b);
 		l3.next.next = new ListNode(c);
 		System.out.println(l3.val+"->"+l3.next.val+"->"+l3.next.next.val);
