@@ -3,7 +3,7 @@ package com.LeetCode;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class 无重复字符的最长子串 {
+public class fooishPig{
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
