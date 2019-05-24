@@ -1,4 +1,4 @@
-package Å£¿ÍÍøµ÷ÊÔÆ÷;
+package com.LeetCode;
 
 public class foolishPig {
 
@@ -7,46 +7,46 @@ public class foolishPig {
 		int b[] = {1,2,3,4,5,6};
 		System.out.println(find(a,b));
 	}
-	//·µ»Ø½Ï´óÊı×Ö
+	//è¿”å›è¾ƒå¤§æ•°å­—
 	public static double returnMax(double a,double b) {
 		if(a>b)
 			return a;
 		else
 			return b;
 	}
-	//·µ»Ø½ÏĞ¡Êı×Ö
+	//è¿”å›è¾ƒå°æ•°å­—
 	public static double returnMin(double a,double b) {
 		if(a<b)
 			return a;
 		else
 			return b;
 	}
-	//²éÕÒÖĞÎ»Êı
+	//æŸ¥æ‰¾ä¸­ä½æ•°
 	public static double find(int[] a,int[] b) {
 		if(a.length>b.length)
-			return find(b,a);		//±£Ö¤ÊÇÔÚ³¤¶ÈĞ¡µÄÊı×éÖĞ²éÕÒÇĞ¸îµÄºÏÊÊÎ»ÖÃ
+			return find(b,a);		//ä¿è¯æ˜¯åœ¨é•¿åº¦å°çš„æ•°ç»„ä¸­æŸ¥æ‰¾åˆ‡å‰²çš„åˆé€‚ä½ç½®
 		int length = a.length+b.length;
-		int cut1 = 0;		//Êı×é1ÇĞ¸îµÄºÏÊÊÎ»ÖÃ
-		int cut2 = 0;		//Êı×é2ÇĞ¸îµÄºÏÊÊÎ»ÖÃ
-		int cutL = 0;  		//¿ªÊ¼ÇĞ¸îµÄ±ä»¯·¶Î§
+		int cut1 = 0;		//æ•°ç»„1åˆ‡å‰²çš„åˆé€‚ä½ç½®
+		int cut2 = 0;		//æ•°ç»„2åˆ‡å‰²çš„åˆé€‚ä½ç½®
+		int cutL = 0;  		//å¼€å§‹åˆ‡å‰²çš„å˜åŒ–èŒƒå›´
 		int cutR = a.length;
 		while(cut1<=a.length) {
-			cut1 = (cutR-cutL)/2+cutL;		//¶ş·Ö²éÕÒ¸üĞÂÃ¿´ÎÇĞ¸îµÄÎ»ÖÃ
+			cut1 = (cutR-cutL)/2+cutL;		//äºŒåˆ†æŸ¥æ‰¾æ›´æ–°æ¯æ¬¡åˆ‡å‰²çš„ä½ç½®
 			cut2 = (length/2)-cut1;
-			//³õÊ¼»¯ÇĞ¸îºóËù²éÕÒµ½µÄÖĞÎ»Êı
+			//åˆå§‹åŒ–åˆ‡å‰²åæ‰€æŸ¥æ‰¾åˆ°çš„ä¸­ä½æ•°
 			double L1 = a[cut1-1];
 			double L2 = b[cut2-1];
 			double R1 = a[cut1];
 			double R2 = b[cut2];
-			//±£Ö¤ÇĞ¸îºóÁ½Êı×éÖ®¼äÈÎÒâ×ó±ßµÄÔªËØ¶¼Ğ¡ÓÚÈÎÒâÓÒ±ßµÄÔªËØ,ÇÒÊ¹×óÓÒÁ½±ßÔªËØÊıÄ¿¾¡¿ÉÄÜÏàÍ¬
+			//ä¿è¯åˆ‡å‰²åä¸¤æ•°ç»„ä¹‹é—´ä»»æ„å·¦è¾¹çš„å…ƒç´ éƒ½å°äºä»»æ„å³è¾¹çš„å…ƒç´ ,ä¸”ä½¿å·¦å³ä¸¤è¾¹å…ƒç´ æ•°ç›®å°½å¯èƒ½ç›¸åŒ
 			if(L1>R2) 
 				cutR = cut1-1;
 			else if(L2>R1)
 				cutL = cut1+1;
 			else {
-				if(length%2==0) {		//ÈôÁ½Êı×é³¤¶ÈºÍÎªÅ¼Êı,ÔòÖĞÎ»ÊıÎªÖĞ¼äÁ½ÊıµÄÆ½¾ùÊı
+				if(length%2==0) {		//è‹¥ä¸¤æ•°ç»„é•¿åº¦å’Œä¸ºå¶æ•°,åˆ™ä¸­ä½æ•°ä¸ºä¸­é—´ä¸¤æ•°çš„å¹³å‡æ•°
 					return (returnMax(L1,L2)+returnMin(R1,R2));
-				}else {								//ÈôÁ½Êı×é³¤¶ÈºÍÎªÆæÊı,ÔòÖĞÎ»ÊıÎª×îÖĞ¼äµÄÊı×Ö
+				}else {								//è‹¥ä¸¤æ•°ç»„é•¿åº¦å’Œä¸ºå¥‡æ•°,åˆ™ä¸­ä½æ•°ä¸ºæœ€ä¸­é—´çš„æ•°å­—
 					return returnMin(R1,R2);		
 				}
 			}
