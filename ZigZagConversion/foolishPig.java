@@ -1,11 +1,11 @@
-package Å£¿ÍÍøµ÷ÊÔÆ÷;
+package com.LeetCode;
 
 import java.util.Scanner;
 
 public class foolishPig1 {
 
 	public static void main(String[] args) {
-		System.out.println("ÇëÊäÈëËùÒª±ä»»µÄ×Ö·û´®¼°ĞĞÊı!");
+		System.out.println("è¯·è¾“å…¥æ‰€è¦å˜æ¢çš„å­—ç¬¦ä¸²åŠè¡Œæ•°!");
 		Scanner s = new Scanner(System.in);
 		String str = s.next();
 		int numRows = s.nextInt();
@@ -18,10 +18,10 @@ public class foolishPig1 {
 		numRows+=1;
 		int x = length/numRows;
 		int[] arr = new int[x+1];
-		arr[0] = 0;			//ÇĞ¸îºóµÚÒ»¸öÆğÊ¼µã
-		arr[x] = x*numRows;			//ÇĞ¸îºó×îºóÒ»¸öÆğÊ¼µã
+		arr[0] = 0;			//åˆ‡å‰²åç¬¬ä¸€ä¸ªèµ·å§‹ç‚¹
+		arr[x] = x*numRows;			//åˆ‡å‰²åæœ€åä¸€ä¸ªèµ·å§‹ç‚¹
 		int i =1;
-		while(i<x) {		//¼ÇÂ¼Ã¿¸öÇĞ¸îµÄµã²¢´æ´¢ÔÚÊı×éÖĞ
+		while(i<x) {		//è®°å½•æ¯ä¸ªåˆ‡å‰²çš„ç‚¹å¹¶å­˜å‚¨åœ¨æ•°ç»„ä¸­
 			arr[i] = numRows*i;
 			i++;
 		}
