@@ -1,3 +1,4 @@
+import re
 class Solution(object):
     def myAtoi(self, s):
         temp = '0123456789'
@@ -23,11 +24,25 @@ class Solution(object):
             return (2**31) -1
         else:
             return res
+    
+    def myAtoi2(self, s):
+        pattern = re.compile(' *[\+\-]?[0-9]+')
+        matcher = re.match(pattern, s)
+        if matcher is not None:
+            res = int(matcher.group(0))
+        else:
+            return 0
+        if res < -(2**31):
+            return -(2**31)
+        elif res > (2**31) -1:
+            return (2**31) -1
+        else:
+            return res
 
 if __name__ == "__main__":
     solve = Solution()
-    print(solve.myAtoi('42'))
-    print(solve.myAtoi('-42'))
-    print(solve.myAtoi('4193 with words'))
-    print(solve.myAtoi('words and 987'))
-    print(solve.myAtoi('-91283472332'))
+    print(solve.myAtoi2('42'))
+    print(solve.myAtoi2(' -42'))
+    print(solve.myAtoi2('4193 with words'))
+    print(solve.myAtoi2('words and 987'))
+    print(solve.myAtoi2('-91283472332'))
