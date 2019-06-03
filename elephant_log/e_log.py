@@ -14,8 +14,8 @@ rule['hard'] = [random.randint(0, 5)]
 
 start_time = time.ctime()
 
-jsonpath = '/home/yanglin/桌面/contruct_elephant/elephant_log/bill.json'
-logpath = '/home/yanglin/桌面/contruct_elephant/elephant_log/elephant.log'
+jsonpath = 'bill.json'
+logpath = 'elephant.log'
 with open(jsonpath, 'r', encoding="utf-8") as f:
     d = json.loads(f.read())
 f.close()
