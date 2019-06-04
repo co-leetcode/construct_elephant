@@ -9,6 +9,8 @@
 ## content
 _**LeetCode题库代码(Java&&Python)**_
 * 关于题目发布，每天发布题目的人负责题目的描述，注明难度，输入输出，参考[leetcode](https://leetcode-cn.com/problemset/all/)官网
+##Slogan
+>一Giu我里Giao Giao！呀吼！Giao！
 ## elephant_pot system
 * 基本规则
 > 容易random(10, 15)
