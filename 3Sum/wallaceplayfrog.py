@@ -4,22 +4,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        if not nums:
-            return []
+        nums.sort()
         res = []
-        for i in range(len(nums)):
-            if i < len(nums):
-                j = i + 1
-            for j in range(j, len(nums)):
-                k = 0 - nums[i] - nums[j]              
-                if k in nums:
-                    k_index = nums.index(k)
-                    if k_index not in (i, j):
-                        temp = [nums[i], nums[j], k]
-                        temp.sort()
-                        if temp not in res:
-                            res.append(temp)   
-        return res   
+        for i in range(len(nums)-2):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            head, tail = i+1, len(nums)-1
+            while head < tail:
+                temp = nums[i] + nums[head] + nums[tail]
+                if temp < 0:
+                    head += 1
+                elif temp > 0:
+                    tail -= 1
+                else:
+                    res.append([nums[i], nums[head], nums[tail]])
+                    while head < tail and nums[head] == nums[head+1]:
+                        head += 1
+                    while head < tail and nums[tail] == nums[tail-1]:
+                        tail -= 1
+                    head += 1
+                    tail -= 1
+        return res
 
 if __name__ == "__main__":
     solve = Solution()
